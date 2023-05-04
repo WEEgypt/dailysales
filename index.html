@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <title>Daily Sales</title>
+        <link rel="icon" href="icon.png" />
+        <link rel="apple-touch-icon" href="icon.png" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body onload="GetDate()">
+        <div>
+            <form method="post" name="Line1" id="Line1">
+                <h2>Daily Sales</h2>
+                <br />
+                <table>
+                    <tr>
+                        <td><label>Date:</label></td>
+                        <td>
+                            <select id="year">
+                                <option value="" selected disabled hidden>Year</option>
+                                <option value="2022">2022</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                                <option value="2026">2026</option>
+                                <option value="2027">2027</option>
+                                <option value="2028">2028</option>
+                                <option value="2029">2029</option>
+                                <option value="2030">2030</option>
+                            </select>
+                            <select id="month">
+                                <option value="" selected disabled hidden>Month</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                            <select id="day">
+                                <option value="" selected disabled hidden>Day</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Store:</label></td>
+                        <td>
+                            <select class="selStore" name="Store" id="store1">
+                                <option value="" selected disabled hidden>Store Name</option>
+                                <option value="شرق النيل"> شرق النيل</option>
+                                <option value="التجديف">التجديف</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Agent:</label></td>
+                        <td>
+                            <select class="selAgent" name="Agent" id="agent1">
+                                <option value="" selected disabled hidden>Agent Name</option>
+                                <option value="مارينا انصف">مارينا انصف</option>
+                                <option value="تقي">تقي</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <br />
+                <label>1.</label>
+                <input type="text" name="Date" id="date1" style="display: none;" />
+                <input type="number" name="Line" id="line1" />
+                <select name="Tariff" id="tariff1">
+                    <option value="" selected disabled hidden>Tariff</option>
+                    <option value="Super kix">Super Kix 100</option>
+                    <option value="Kix">Kix</option>
+                </select>
+                <p id="loading1" class="loading">Sending</p>
+                <br />
+                <br />
+            </form>
+            <form method="post" name="Line2" id="Line2">
+                <input type="text" name="Date" id="date2" style="display: none;" />
+                <input type="text" name="Store" id="store2" style="display: none;" />
+                <input type="text" name="Agent" id="agent2" style="display: none;" />
+                <label>2.</label>
+                <input type="number" name="Line" id="line2" />
+                <select name="Tariff" id="tariff2">
+                    <option value="" selected disabled hidden>Tariff</option>
+                    <option value="Super kix">Super Kix</option>
+                    <option value="Kix">Kix</option>
+                </select>
+                <p id="loading2" class="loading">Sending</p>
+                <br />
+                <br />
+            </form>
+            <form method="post" name="Line3" id="Line3">
+                <input type="text" name="Date" id="date3" style="display: none;" />
+                <input type="text" name="Store" id="store3" style="display: none;" />
+                <input type="text" name="Agent" id="agent3" style="display: none;" />
+                <label>3.</label>
+                <input type="number" name="Line" id="line3" />
+                <select name="Tariff" id="tariff3">
+                    <option value="" selected disabled hidden>Tariff</option>
+                    <option value="Super kix">Super Kix</option>
+                    <option value="Kix">Kix</option>
+                </select>
+                <p id="loading3" class="loading">Sending</p>
+                <br />
+                <br />
+            </form>
+            <form method="post" name="Line4" id="Line4">
+                <input type="text" name="Date" id="date4" style="display: none;" />
+                <input type="text" name="Store" id="store4" style="display: none;" />
+                <input type="text" name="Agent" id="agent4" style="display: none;" />
+                <label>4.</label>
+                <input type="number" name="Line" id="line4" />
+                <select name="Tariff" id="tariff4">
+                    <option value="" selected disabled hidden>Tariff</option>
+                    <option value="Super kix">Super Kix</option>
+                    <option value="Kix">Kix</option>
+                </select>
+                <p id="loading4" class="loading">Sending</p>
+                <br />
+                <br />
+            </form>
+            <form method="post" name="Line5" id="Line5">
+                <input type="text" name="Date" id="date5" style="display: none;" />
+                <input type="text" name="Store" id="store5" style="display: none;" />
+                <input type="text" name="Agent" id="agent5" style="display: none;" />
+                <label>5.</label>
+                <input type="number" name="Line" id="line5" />
+                <select name="Tariff" id="tariff5">
+                    <option value="" selected disabled hidden>Tariff</option>
+                    <option value="Super kix">Super Kix</option>
+                    <option value="Kix">Kix</option>
+                </select>
+                <p id="loading5" class="loading">Sending</p>
+                <br />
+                <br />
+            </form>
+            <form method="post" name="Line6" id="Line6">
+                <input type="text" name="Date" id="date6" style="display: none;" />
+                <input type="text" name="Store" id="store6" style="display: none;" />
+                <input type="text" name="Agent" id="agent6" style="display: none;" />
+                <label>6.</label>
+                <input type="number" name="Line" id="line6" />
+                <select name="Tariff" id="tariff6">
+                    <option value="" selected disabled hidden>Tariff</option>
+                    <option value="Super kix">Super Kix</option>
+                    <option value="Kix">Kix</option>
+                </select>
+                <p id="loading6" class="loading">Sending</p>
+                <br />
+                <br />
+            </form>
+            <form method="post" name="Line7" id="Line7">
+                <input type="text" name="Date" id="date7" style="display: none;" />
+                <input type="text" name="Store" id="store7" style="display: none;" />
+                <input type="text" name="Agent" id="agent7" style="display: none;" />
+                <label>7.</label>
+                <input type="number" name="Line" id="line7" />
+                <select name="Tariff" id="tariff7">
+                    <option value="" selected disabled hidden>Tariff</option>
+                    <option value="Super kix">Super Kix</option>
+                    <option value="Kix">Kix</option>
+                </select>
+                <p id="loading7" class="loading">Sending</p>
+                <br />
+                <br />
+            </form>
+            <form method="post" name="Line8" id="Line8">
+                <input type="text" name="Date" id="date8" style="display: none;" />
+                <input type="text" name="Store" id="store8" style="display: none;" />
+                <input type="text" name="Agent" id="agent8" style="display: none;" />
+                <label>8.</label>
+                <input type="number" name="Line" id="line8" />
+                <select name="Tariff" id="tariff8">
+                    <option value="" selected disabled hidden>Tariff</option>
+                    <option value="Super kix">Super Kix</option>
+                    <option value="Kix">Kix</option>
+                </select>
+                <p id="loading8" class="loading">Sending</p>
+                <br />
+                <br />
+            </form>
+            <form method="post" name="Line9" id="Line9">
+                <input type="text" name="Date" id="date9" style="display: none;" />
+                <input type="text" name="Store" id="store9" style="display: none;" />
+                <input type="text" name="Agent" id="agent9" style="display: none;" />
+                <label>9.</label>
+                <input type="number" name="Line" id="line9" />
+                <select name="Tariff" id="tariff9">
+                    <option value="" selected disabled hidden>Tariff</option>
+                    <option value="Super kix">Super Kix</option>
+                    <option value="Kix">Kix</option>
+                </select>
+                <p id="loading9" class="loading">Sending</p>
+                <br />
+                <br />
+                <br />
+                <input style="display: none;" id="submit" type="submit" value="Submit" />
+                <button type="button" id="checkandsubmit" onclick="checkInput()">Submit</button>
+                <br />
+                <br />
+            </form>
+        </div>
+        <script>
+            document.getElementById("Line9").onkeypress = function (e) {
+                var key = e.charCode || e.keyCode || 0;
+                if (key == 13) {
+                    e.preventDefault();
+                }
+            };
+            const scriptURL = "https://script.google.com/macros/s/AKfycbwUKdOrkBuZspZtBZHPlUJFq5tb7fk_Or9tydVlfG2laa1AR_PdAfhjHIP9jUmAWfAOjg/exec?sheetName=Sales";
+            const form1 = document.forms["Line1"];
+            const form2 = document.forms["Line2"];
+            const form3 = document.forms["Line3"];
+            const form4 = document.forms["Line4"];
+            const form5 = document.forms["Line5"];
+            const form6 = document.forms["Line6"];
+            const form7 = document.forms["Line7"];
+            const form8 = document.forms["Line8"];
+            const form9 = document.forms["Line9"];
+            form9.addEventListener("submit", (e) => {
+                document.getElementById("checkandsubmit").disabled = true;
+                e.preventDefault();
+                var date = document.getElementById("day").value + "/" + document.getElementById("month").value + "/" + document.getElementById("year").value;
+                document.getElementById("date1").value = date;
+                document.getElementById("date2").value = date;
+                document.getElementById("date3").value = date;
+                document.getElementById("date4").value = date;
+                document.getElementById("date5").value = date;
+                document.getElementById("date6").value = date;
+                document.getElementById("date7").value = date;
+                document.getElementById("date8").value = date;
+                document.getElementById("date9").value = date;
+                var store = document.getElementById("store1").value;
+                document.getElementById("store2").value = store;
+                document.getElementById("store3").value = store;
+                document.getElementById("store4").value = store;
+                document.getElementById("store5").value = store;
+                document.getElementById("store6").value = store;
+                document.getElementById("store7").value = store;
+                document.getElementById("store8").value = store;
+                document.getElementById("store9").value = store;
+                var agent = document.getElementById("agent1").value;
+                document.getElementById("agent2").value = agent;
+                document.getElementById("agent3").value = agent;
+                document.getElementById("agent4").value = agent;
+                document.getElementById("agent5").value = agent;
+                document.getElementById("agent6").value = agent;
+                document.getElementById("agent7").value = agent;
+                document.getElementById("agent8").value = agent;
+                document.getElementById("agent9").value = agent;
+                if (document.getElementById("line1").value !== "") {
+                    loading1.style.color = "var(--color)";
+                    document.getElementById("loading1").innerHTML = " Sending";
+                    fetch(scriptURL, { method: "POST", body: new FormData(Line1) })
+                        .then((response) => (document.getElementById("loading1").innerHTML = " Sent"))
+                        .catch((error) => (document.getElementById("loading1").innerHTML = " Error!"));
+                }
+                if (document.getElementById("line2").value !== "") {
+                    loading2.style.color = "var(--color)";
+                    fetch(scriptURL, { method: "POST", body: new FormData(Line2) })
+                        .then((response) => (document.getElementById("loading2").innerHTML = " Sent"))
+                        .catch((error) => (document.getElementById("loading2").innerHTML = " Error!"));
+                }
+                if (document.getElementById("line3").value !== "") {
+                    loading3.style.color = "var(--color)";
+                    fetch(scriptURL, { method: "POST", body: new FormData(Line3) })
+                        .then((response) => (document.getElementById("loading3").innerHTML = " Sent"))
+                        .catch((error) => (document.getElementById("loading3").innerHTML = " Error!"));
+                }
+                if (document.getElementById("line4").value !== "") {
+                    loading4.style.color = "var(--color)";
+                    fetch(scriptURL, { method: "POST", body: new FormData(Line4) })
+                        .then((response) => (document.getElementById("loading4").innerHTML = " Sent"))
+                        .catch((error) => (document.getElementById("loading4").innerHTML = " Error!"));
+                }
+                if (document.getElementById("line5").value !== "") {
+                    loading5.style.color = "var(--color)";
+                    fetch(scriptURL, { method: "POST", body: new FormData(Line5) })
+                        .then((response) => (document.getElementById("loading5").innerHTML = " Sent"))
+                        .catch((error) => (document.getElementById("loading5").innerHTML = " Error!"));
+                }
+                if (document.getElementById("line6").value !== "") {
+                    loading6.style.color = "var(--color)";
+                    fetch(scriptURL, { method: "POST", body: new FormData(Line6) })
+                        .then((response) => (document.getElementById("loading6").innerHTML = " Sent"))
+                        .catch((error) => (document.getElementById("loading6").innerHTML = " Error!"));
+                }
+                if (document.getElementById("line7").value !== "") {
+                    loading7.style.color = "var(--color)";
+                    fetch(scriptURL, { method: "POST", body: new FormData(Line7) })
+                        .then((response) => (document.getElementById("loading7").innerHTML = " Sent"))
+                        .catch((error) => (document.getElementById("loading7").innerHTML = " Error!"));
+                }
+                if (document.getElementById("line8").value !== "") {
+                    loading8.style.color = "var(--color)";
+                    fetch(scriptURL, { method: "POST", body: new FormData(Line8) })
+                        .then((response) => (document.getElementById("loading8").innerHTML = " Sent"))
+                        .catch((error) => (document.getElementById("loading8").innerHTML = " Error!"));
+                }
+                if (document.getElementById("line9").value !== "") {
+                    loading9.style.color = "var(--color)";
+                    fetch(scriptURL, { method: "POST", body: new FormData(Line9) })
+                        .then((response) => (document.getElementById("loading9").innerHTML = " Sent"))
+                        .catch((error) => (document.getElementById("loading9").innerHTML = " Error!"));
+                }
+            });
+            function GetDate() {
+                document.getElementById("day").value = new Date().getDate();
+                document.getElementById("month").value = new Date().getMonth() + 1;
+                document.getElementById("year").value = new Date().getFullYear();
+            }
+            function checkInput() {
+                if (document.getElementById("store1").value == "") {
+                    document.getElementById("store1").focus();
+                    return false;
+                } else if (document.getElementById("agent1").value == "") {
+                    document.getElementById("agent1").focus();
+                    return false;
+                } else if (
+                    document.getElementById("line1").value == "" &&
+                    document.getElementById("line2").value == "" &&
+                    document.getElementById("line3").value == "" &&
+                    document.getElementById("line4").value == "" &&
+                    document.getElementById("line5").value == "" &&
+                    document.getElementById("line6").value == "" &&
+                    document.getElementById("line7").value == "" &&
+                    document.getElementById("line8").value == "" &&
+                    document.getElementById("line9").value == ""
+                ) {
+                    alert("You must add one number at least!");
+                    return false;
+                } else if (
+                    (document.getElementById("line1").value !== "" && document.getElementById("tariff1").value == "") ||
+                    (document.getElementById("line2").value !== "" && document.getElementById("tariff2").value == "") ||
+                    (document.getElementById("line3").value !== "" && document.getElementById("tariff3").value == "") ||
+                    (document.getElementById("line4").value !== "" && document.getElementById("tariff4").value == "") ||
+                    (document.getElementById("line5").value !== "" && document.getElementById("tariff5").value == "") ||
+                    (document.getElementById("line6").value !== "" && document.getElementById("tariff6").value == "") ||
+                    (document.getElementById("line7").value !== "" && document.getElementById("tariff7").value == "") ||
+                    (document.getElementById("line8").value !== "" && document.getElementById("tariff8").value == "") ||
+                    (document.getElementById("line9").value !== "" && document.getElementById("tariff9").value == "")
+                ) {
+                    alert("You must choose tariff!");
+                    return false;
+                } else {
+                    document.getElementById("submit").click();
+                }
+            }
+        </script>
+    </body>
+</html>

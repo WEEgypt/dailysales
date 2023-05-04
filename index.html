@@ -538,7 +538,6 @@
                     e.preventDefault();
                 }
             };
-            const scriptURL = "https://script.google.com/macros/s/AKfycbxUyT6Yj1yaHRgtjo9k2VAJQCWIaHlyWhbEsM5KwqiClYgg_82q5V52m1PbJ6mvqHcNvw/exec?sheetName=May";
             const form1 = document.forms["Line1"];
             const form2 = document.forms["Line2"];
             const form3 = document.forms["Line3"];
@@ -551,6 +550,31 @@
             form9.addEventListener("submit", (e) => {
                 document.getElementById("checkandsubmit").disabled = true;
                 e.preventDefault();
+                if (document.getElementById("month").value == 1) {
+                    var scriptURL = "https://script.google.com/macros/s/AKfycbxUyT6Yj1yaHRgtjo9k2VAJQCWIaHlyWhbEsM5KwqiClYgg_82q5V52m1PbJ6mvqHcNvw/exec?sheetName=Jan";
+                } else if (document.getElementById("month").value == 2) {
+                    var scriptURL = "https://script.google.com/macros/s/AKfycbxUyT6Yj1yaHRgtjo9k2VAJQCWIaHlyWhbEsM5KwqiClYgg_82q5V52m1PbJ6mvqHcNvw/exec?sheetName=Feb";
+                } else if (document.getElementById("month").value == 3) {
+                    var scriptURL = "https://script.google.com/macros/s/AKfycbxUyT6Yj1yaHRgtjo9k2VAJQCWIaHlyWhbEsM5KwqiClYgg_82q5V52m1PbJ6mvqHcNvw/exec?sheetName=Mar";
+                } else if (document.getElementById("month").value == 4) {
+                    var scriptURL = "https://script.google.com/macros/s/AKfycbxUyT6Yj1yaHRgtjo9k2VAJQCWIaHlyWhbEsM5KwqiClYgg_82q5V52m1PbJ6mvqHcNvw/exec?sheetName=Apr";
+                } else if (document.getElementById("month").value == 5) {
+                    var scriptURL = "https://script.google.com/macros/s/AKfycbxUyT6Yj1yaHRgtjo9k2VAJQCWIaHlyWhbEsM5KwqiClYgg_82q5V52m1PbJ6mvqHcNvw/exec?sheetName=May";
+                } else if (document.getElementById("month").value == 6) {
+                    var scriptURL = "https://script.google.com/macros/s/AKfycbxUyT6Yj1yaHRgtjo9k2VAJQCWIaHlyWhbEsM5KwqiClYgg_82q5V52m1PbJ6mvqHcNvw/exec?sheetName=Jun";
+                } else if (document.getElementById("month").value == 7) {
+                    var scriptURL = "https://script.google.com/macros/s/AKfycbxUyT6Yj1yaHRgtjo9k2VAJQCWIaHlyWhbEsM5KwqiClYgg_82q5V52m1PbJ6mvqHcNvw/exec?sheetName=Jul";
+                } else if (document.getElementById("month").value == 8) {
+                    var scriptURL = "https://script.google.com/macros/s/AKfycbxUyT6Yj1yaHRgtjo9k2VAJQCWIaHlyWhbEsM5KwqiClYgg_82q5V52m1PbJ6mvqHcNvw/exec?sheetName=Aug";
+                } else if (document.getElementById("month").value == 9) {
+                    var scriptURL = "https://script.google.com/macros/s/AKfycbxUyT6Yj1yaHRgtjo9k2VAJQCWIaHlyWhbEsM5KwqiClYgg_82q5V52m1PbJ6mvqHcNvw/exec?sheetName=Sep";
+                } else if (document.getElementById("month").value == 10) {
+                    var scriptURL = "https://script.google.com/macros/s/AKfycbxUyT6Yj1yaHRgtjo9k2VAJQCWIaHlyWhbEsM5KwqiClYgg_82q5V52m1PbJ6mvqHcNvw/exec?sheetName=Oct";
+                } else if (document.getElementById("month").value == 11) {
+                    var scriptURL = "https://script.google.com/macros/s/AKfycbxUyT6Yj1yaHRgtjo9k2VAJQCWIaHlyWhbEsM5KwqiClYgg_82q5V52m1PbJ6mvqHcNvw/exec?sheetName=Nov";
+                } else if (document.getElementById("month").value == 12) {
+                    var scriptURL = "https://script.google.com/macros/s/AKfycbxUyT6Yj1yaHRgtjo9k2VAJQCWIaHlyWhbEsM5KwqiClYgg_82q5V52m1PbJ6mvqHcNvw/exec?sheetName=Dec";
+                }
                 var date = document.getElementById("day").value + "/" + document.getElementById("month").value + "/" + document.getElementById("year").value;
                 document.getElementById("date1").value = date;
                 document.getElementById("date2").value = date;

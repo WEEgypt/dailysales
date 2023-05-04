@@ -41,7 +41,7 @@ label {
 td {
     height: 28px;
 }
-input[type="number"] {
+input[type="tel"] {
     width: 140px;
 }
 button {

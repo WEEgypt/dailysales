@@ -1,24 +1,33 @@
 :root {
-    --bg: #fff;
-    --color: #000;
+    --bg: #f2f2f2;
+    --mainDiv: #fff;
+    --color: #2d3737;
 }
 @media (prefers-color-scheme: dark) {
     :root {
         --bg: #000;
+        --mainDiv: #2d3737;
         --color: #fff;
     }
 }
+html {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+}
 body {
-    background-color: var(--bg);
     font-family: verdana;
     font-size: 14px;
     margin: auto;
     width: max-content;
     color: var(--color);
-    padding: 10px 10px 10px 10px;
+    padding: 10px;
+    background-color: var(--bg);
 }
 h2 {
     text-align: center;
+    padding: 0px 40px 20px 10px;
 }
 label {
     display: inline-block;
@@ -39,6 +48,10 @@ select {
 }
 select:focus {
     outline-style: auto;
+}
+.mainDiv {
+    background-color: var(--mainDiv);
+    padding: 34px 34px 34px 64px;
 }
 .selStore {
     width: -webkit-fill-available;

@@ -532,6 +532,48 @@
             </form>
         </div>
         <script>
+            function GetDate() {
+                document.getElementById("day").value = new Date().getDate();
+                document.getElementById("month").value = new Date().getMonth() + 1;
+                document.getElementById("year").value = new Date().getFullYear();
+            }
+            function checkInput() {
+                if (document.getElementById("store1").value == "") {
+                    document.getElementById("store1").focus();
+                    return false;
+                } else if (document.getElementById("agent1").value == "") {
+                    document.getElementById("agent1").focus();
+                    return false;
+                } else if (
+                    document.getElementById("line1").value == "" &&
+                    document.getElementById("line2").value == "" &&
+                    document.getElementById("line3").value == "" &&
+                    document.getElementById("line4").value == "" &&
+                    document.getElementById("line5").value == "" &&
+                    document.getElementById("line6").value == "" &&
+                    document.getElementById("line7").value == "" &&
+                    document.getElementById("line8").value == "" &&
+                    document.getElementById("line9").value == ""
+                ) {
+                    alert("You must add one number at least!");
+                    return false;
+                } else if (
+                    (document.getElementById("line1").value !== "" && document.getElementById("tariff1").value == "") ||
+                    (document.getElementById("line2").value !== "" && document.getElementById("tariff2").value == "") ||
+                    (document.getElementById("line3").value !== "" && document.getElementById("tariff3").value == "") ||
+                    (document.getElementById("line4").value !== "" && document.getElementById("tariff4").value == "") ||
+                    (document.getElementById("line5").value !== "" && document.getElementById("tariff5").value == "") ||
+                    (document.getElementById("line6").value !== "" && document.getElementById("tariff6").value == "") ||
+                    (document.getElementById("line7").value !== "" && document.getElementById("tariff7").value == "") ||
+                    (document.getElementById("line8").value !== "" && document.getElementById("tariff8").value == "") ||
+                    (document.getElementById("line9").value !== "" && document.getElementById("tariff9").value == "")
+                ) {
+                    alert("You must choose tariff!");
+                    return false;
+                } else {
+                    document.getElementById("submit").click();
+                }
+            }
             document.getElementById("Line9").onkeypress = function (e) {
                 var key = e.charCode || e.keyCode || 0;
                 if (key == 13) {
@@ -605,7 +647,6 @@
                 document.getElementById("agent9").value = agent;
                 if (document.getElementById("line1").value !== "") {
                     loading1.style.color = "var(--color)";
-                    document.getElementById("loading1").innerHTML = " Sending";
                     fetch(scriptURL, { method: "POST", body: new FormData(Line1) })
                         .then((response) => (document.getElementById("loading1").innerHTML = " Sent"))
                         .catch((error) => (document.getElementById("loading1").innerHTML = " Error!"));
@@ -659,48 +700,6 @@
                         .catch((error) => (document.getElementById("loading9").innerHTML = " Error!"));
                 }
             });
-            function GetDate() {
-                document.getElementById("day").value = new Date().getDate();
-                document.getElementById("month").value = new Date().getMonth() + 1;
-                document.getElementById("year").value = new Date().getFullYear();
-            }
-            function checkInput() {
-                if (document.getElementById("store1").value == "") {
-                    document.getElementById("store1").focus();
-                    return false;
-                } else if (document.getElementById("agent1").value == "") {
-                    document.getElementById("agent1").focus();
-                    return false;
-                } else if (
-                    document.getElementById("line1").value == "" &&
-                    document.getElementById("line2").value == "" &&
-                    document.getElementById("line3").value == "" &&
-                    document.getElementById("line4").value == "" &&
-                    document.getElementById("line5").value == "" &&
-                    document.getElementById("line6").value == "" &&
-                    document.getElementById("line7").value == "" &&
-                    document.getElementById("line8").value == "" &&
-                    document.getElementById("line9").value == ""
-                ) {
-                    alert("You must add one number at least!");
-                    return false;
-                } else if (
-                    (document.getElementById("line1").value !== "" && document.getElementById("tariff1").value == "") ||
-                    (document.getElementById("line2").value !== "" && document.getElementById("tariff2").value == "") ||
-                    (document.getElementById("line3").value !== "" && document.getElementById("tariff3").value == "") ||
-                    (document.getElementById("line4").value !== "" && document.getElementById("tariff4").value == "") ||
-                    (document.getElementById("line5").value !== "" && document.getElementById("tariff5").value == "") ||
-                    (document.getElementById("line6").value !== "" && document.getElementById("tariff6").value == "") ||
-                    (document.getElementById("line7").value !== "" && document.getElementById("tariff7").value == "") ||
-                    (document.getElementById("line8").value !== "" && document.getElementById("tariff8").value == "") ||
-                    (document.getElementById("line9").value !== "" && document.getElementById("tariff9").value == "")
-                ) {
-                    alert("You must choose tariff!");
-                    return false;
-                } else {
-                    document.getElementById("submit").click();
-                }
-            }
         </script>
         <br />
         <footer>

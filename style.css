@@ -20,8 +20,8 @@ body {
     font-family: verdana;
     font-size: 14px;
     margin: auto;
+    width: 500px;
     min-width: max-content;
-    width: max-content;
     color: var(--color);
     padding: 10px;
     background-color: var(--bg);
@@ -48,7 +48,7 @@ button {
     float: right;
 }
 select {
-    width: 70px;
+    width: 110px;
 }
 select:focus {
     outline-style: auto;

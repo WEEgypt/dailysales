@@ -665,30 +665,31 @@
             form9.addEventListener("submit", (e) => {
                 document.getElementById("checkandsubmit").disabled = true;
                 e.preventDefault();
+                var ScriptURL = "https://script.google.com/macros/s/AKfycbyUE-rSjMDmgt00A6OkCuw-4Ze_pqXe-TlIsaAYUr618OjJii6MjfeOjD682iTpigLl/exec";
                 if (document.getElementById("month").value == 1) {
-                    var scriptURL = "https://script.google.com/macros/s/AKfycbxUyT6Yj1yaHRgtjo9k2VAJQCWIaHlyWhbEsM5KwqiClYgg_82q5V52m1PbJ6mvqHcNvw/exec?sheetName=Jan";
+                    var ThisMonthScriptURL = ScriptURL + "?sheetName=Jan";
                 } else if (document.getElementById("month").value == 2) {
-                    var scriptURL = "https://script.google.com/macros/s/AKfycbxUyT6Yj1yaHRgtjo9k2VAJQCWIaHlyWhbEsM5KwqiClYgg_82q5V52m1PbJ6mvqHcNvw/exec?sheetName=Feb";
+                    var ThisMonthScriptURL = ScriptURL + "?sheetName=Feb";
                 } else if (document.getElementById("month").value == 3) {
-                    var scriptURL = "https://script.google.com/macros/s/AKfycbxUyT6Yj1yaHRgtjo9k2VAJQCWIaHlyWhbEsM5KwqiClYgg_82q5V52m1PbJ6mvqHcNvw/exec?sheetName=Mar";
+                    var ThisMonthScriptURL = ScriptURL + "?sheetName=Mar";
                 } else if (document.getElementById("month").value == 4) {
-                    var scriptURL = "https://script.google.com/macros/s/AKfycbxUyT6Yj1yaHRgtjo9k2VAJQCWIaHlyWhbEsM5KwqiClYgg_82q5V52m1PbJ6mvqHcNvw/exec?sheetName=Apr";
+                    var ThisMonthScriptURL = ScriptURL + "?sheetName=Apr";
                 } else if (document.getElementById("month").value == 5) {
-                    var scriptURL = "https://script.google.com/macros/s/AKfycbxUyT6Yj1yaHRgtjo9k2VAJQCWIaHlyWhbEsM5KwqiClYgg_82q5V52m1PbJ6mvqHcNvw/exec?sheetName=May";
+                    var ThisMonthScriptURL = ScriptURL + "?sheetName=May";
                 } else if (document.getElementById("month").value == 6) {
-                    var scriptURL = "https://script.google.com/macros/s/AKfycbxUyT6Yj1yaHRgtjo9k2VAJQCWIaHlyWhbEsM5KwqiClYgg_82q5V52m1PbJ6mvqHcNvw/exec?sheetName=Jun";
+                    var ThisMonthScriptURL = ScriptURL + "?sheetName=Jun";
                 } else if (document.getElementById("month").value == 7) {
-                    var scriptURL = "https://script.google.com/macros/s/AKfycbxUyT6Yj1yaHRgtjo9k2VAJQCWIaHlyWhbEsM5KwqiClYgg_82q5V52m1PbJ6mvqHcNvw/exec?sheetName=Jul";
+                    var ThisMonthScriptURL = ScriptURL + "?sheetName=Jul";
                 } else if (document.getElementById("month").value == 8) {
-                    var scriptURL = "https://script.google.com/macros/s/AKfycbxUyT6Yj1yaHRgtjo9k2VAJQCWIaHlyWhbEsM5KwqiClYgg_82q5V52m1PbJ6mvqHcNvw/exec?sheetName=Aug";
+                    var ThisMonthScriptURL = ScriptURL + "?sheetName=Aug";
                 } else if (document.getElementById("month").value == 9) {
-                    var scriptURL = "https://script.google.com/macros/s/AKfycbxUyT6Yj1yaHRgtjo9k2VAJQCWIaHlyWhbEsM5KwqiClYgg_82q5V52m1PbJ6mvqHcNvw/exec?sheetName=Sep";
+                    var ThisMonthScriptURL = ScriptURL + "?sheetName=Sep";
                 } else if (document.getElementById("month").value == 10) {
-                    var scriptURL = "https://script.google.com/macros/s/AKfycbxUyT6Yj1yaHRgtjo9k2VAJQCWIaHlyWhbEsM5KwqiClYgg_82q5V52m1PbJ6mvqHcNvw/exec?sheetName=Oct";
+                    var ThisMonthScriptURL = ScriptURL + "?sheetName=Oct";
                 } else if (document.getElementById("month").value == 11) {
-                    var scriptURL = "https://script.google.com/macros/s/AKfycbxUyT6Yj1yaHRgtjo9k2VAJQCWIaHlyWhbEsM5KwqiClYgg_82q5V52m1PbJ6mvqHcNvw/exec?sheetName=Nov";
+                    var ThisMonthScriptURL = ScriptURL + "?sheetName=Nov";
                 } else if (document.getElementById("month").value == 12) {
-                    var scriptURL = "https://script.google.com/macros/s/AKfycbxUyT6Yj1yaHRgtjo9k2VAJQCWIaHlyWhbEsM5KwqiClYgg_82q5V52m1PbJ6mvqHcNvw/exec?sheetName=Dec";
+                    var ThisMonthScriptURL = ScriptURL + "?sheetName=Dec";
                 }
                 var date = document.getElementById("day").value + "/" + document.getElementById("month").value + "/" + document.getElementById("year").value;
                 document.getElementById("date1").value = date;
@@ -720,55 +721,55 @@
                 document.getElementById("agent9").value = agent;
                 if (document.getElementById("line1").value !== "") {
                     loading1.style.color = "var(--color)";
-                    fetch(scriptURL, { method: "POST", body: new FormData(Line1) })
+                    fetch(ThisMonthScriptURL, { method: "POST", body: new FormData(Line1) })
                         .then((response) => (document.getElementById("loading1").innerHTML = " Sent"))
                         .catch((error) => (document.getElementById("loading1").innerHTML = " Error!"));
                 }
                 if (document.getElementById("line2").value !== "") {
                     loading2.style.color = "var(--color)";
-                    fetch(scriptURL, { method: "POST", body: new FormData(Line2) })
+                    fetch(ThisMonthScriptURL, { method: "POST", body: new FormData(Line2) })
                         .then((response) => (document.getElementById("loading2").innerHTML = " Sent"))
                         .catch((error) => (document.getElementById("loading2").innerHTML = " Error!"));
                 }
                 if (document.getElementById("line3").value !== "") {
                     loading3.style.color = "var(--color)";
-                    fetch(scriptURL, { method: "POST", body: new FormData(Line3) })
+                    fetch(ThisMonthScriptURL, { method: "POST", body: new FormData(Line3) })
                         .then((response) => (document.getElementById("loading3").innerHTML = " Sent"))
                         .catch((error) => (document.getElementById("loading3").innerHTML = " Error!"));
                 }
                 if (document.getElementById("line4").value !== "") {
                     loading4.style.color = "var(--color)";
-                    fetch(scriptURL, { method: "POST", body: new FormData(Line4) })
+                    fetch(ThisMonthScriptURL, { method: "POST", body: new FormData(Line4) })
                         .then((response) => (document.getElementById("loading4").innerHTML = " Sent"))
                         .catch((error) => (document.getElementById("loading4").innerHTML = " Error!"));
                 }
                 if (document.getElementById("line5").value !== "") {
                     loading5.style.color = "var(--color)";
-                    fetch(scriptURL, { method: "POST", body: new FormData(Line5) })
+                    fetch(ThisMonthScriptURL, { method: "POST", body: new FormData(Line5) })
                         .then((response) => (document.getElementById("loading5").innerHTML = " Sent"))
                         .catch((error) => (document.getElementById("loading5").innerHTML = " Error!"));
                 }
                 if (document.getElementById("line6").value !== "") {
                     loading6.style.color = "var(--color)";
-                    fetch(scriptURL, { method: "POST", body: new FormData(Line6) })
+                    fetch(ThisMonthScriptURL, { method: "POST", body: new FormData(Line6) })
                         .then((response) => (document.getElementById("loading6").innerHTML = " Sent"))
                         .catch((error) => (document.getElementById("loading6").innerHTML = " Error!"));
                 }
                 if (document.getElementById("line7").value !== "") {
                     loading7.style.color = "var(--color)";
-                    fetch(scriptURL, { method: "POST", body: new FormData(Line7) })
+                    fetch(ThisMonthScriptURL, { method: "POST", body: new FormData(Line7) })
                         .then((response) => (document.getElementById("loading7").innerHTML = " Sent"))
                         .catch((error) => (document.getElementById("loading7").innerHTML = " Error!"));
                 }
                 if (document.getElementById("line8").value !== "") {
                     loading8.style.color = "var(--color)";
-                    fetch(scriptURL, { method: "POST", body: new FormData(Line8) })
+                    fetch(ThisMonthScriptURL, { method: "POST", body: new FormData(Line8) })
                         .then((response) => (document.getElementById("loading8").innerHTML = " Sent"))
                         .catch((error) => (document.getElementById("loading8").innerHTML = " Error!"));
                 }
                 if (document.getElementById("line9").value !== "") {
                     loading9.style.color = "var(--color)";
-                    fetch(scriptURL, { method: "POST", body: new FormData(Line9) })
+                    fetch(ThisMonthScriptURL, { method: "POST", body: new FormData(Line9) })
                         .then((response) => (document.getElementById("loading9").innerHTML = " Sent"))
                         .catch((error) => (document.getElementById("loading9").innerHTML = " Error!"));
                 }

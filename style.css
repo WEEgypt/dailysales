@@ -67,7 +67,6 @@ select:focus {
 }
 .loading {
     display: inline;
-    color: transparent;
 }
 .footer {
     text-align: center;

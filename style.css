@@ -1,34 +1,29 @@
 :root {
-    --bg: #f2f2f2;
-    --mainDiv: #fff;
-    --color: #2d3737;
+    --bg: #fff;
+    --color: #000;
 }
 @media (prefers-color-scheme: dark) {
     :root {
         --bg: #000;
-        --mainDiv: #2d3737;
         --color: #fff;
     }
 }
 html {
     display: flex;
-    align-items: center;
-    justify-content: center;
     min-height: 100%;
 }
 body {
+    margin: auto;
+    min-width: max-content;
+    padding: 20px;
     font-family: verdana;
     font-size: 14px;
-    margin: auto;
-    width: 500px;
-    min-width: max-content;
     color: var(--color);
-    padding: 10px;
     background-color: var(--bg);
 }
 h2 {
     text-align: center;
-    padding: 0px 30px 10px 0px;
+    padding: 0px 0px 10px 0px;
 }
 p {
     font-size: 12px;
@@ -42,20 +37,16 @@ td {
     height: 28px;
 }
 input[type="tel"] {
-    width: 140px;
-}
-button {
-    float: right;
+    width: 128px;
 }
 select {
-    width: 110px;
+    width: 64px;
 }
 select:focus {
     outline-style: auto;
 }
-.mainDiv {
-    background-color: var(--mainDiv);
-    padding: 34px 34px 25px 64px;
+button {
+    float: right;
 }
 .selStore {
     width: -webkit-fill-available;
@@ -65,8 +56,14 @@ select:focus {
     width: -webkit-fill-available;
     width: -moz-available;
 }
+.content {
+    position: relative;
+    left: 7%;
+}
 .loading {
-    display: inline;
+    font-size: 12px;
+    position: relative;
+    left: 2%;
 }
 .footer {
     text-align: center;

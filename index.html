@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta name="viewport" content="width=device-width,initial-scale=0.70,maximum-scale=1,user-scalable=no" />
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
         <title>Daily Sales</title>
         <link rel="icon" href="icon.png" />
@@ -9,103 +9,105 @@
         <link rel="stylesheet" href="style.css" />
     </head>
     <body onload="GetDate()">
-        <div class="mainDiv">
+        <h2>Daily Sales</h2>
+        <div class="content">
+            <table>
+                <tr>
+                    <td><label>Date:</label></td>
+                    <td>
+                        <select id="day">
+                            <option value="" selected disabled hidden>Day</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                        </select>
+                        <select id="month" onchange="DaysFix()">
+                            <option value="" selected disabled hidden>Month</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                        <select id="year" onchange="DaysFix()">
+                            <option value="" selected disabled hidden>Year</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
+                            <option value="2027">2027</option>
+                            <option value="2028">2028</option>
+                            <option value="2029">2029</option>
+                            <option value="2030">2030</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Store:</label></td>
+                    <td>
+                        <select class="selStore" id="store">
+                            <option value="" selected disabled hidden>Store Name</option>
+                            <option value="شرق النيل">شرق النيل</option>
+                            <option value="نادى التجديف">نادى التجديف</option>
+                            <option value="بيت الرحمه">بيت الرحمه</option>
+                            <option value="الشهيد">الشهيد</option>
+                            <option value="اخميم">اخميم</option>
+                            <option value="المنشاه">المنشاه</option>
+                            <option value="جرجا - المصريه جروب">جرجا - المصريه جروب</option>
+                            <option value="جرجا - فيوتشر">جرجا - فيوتشر</option>
+                            <option value="البلينا - فيوتشر">البلينا - فيوتشر</option>
+                            <option value="البلينا - تليكوم">البلينا - تليكوم</option>
+                            <option value="دار السلام">دار السلام</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Agent:</label></td>
+                    <td><input type="text" class="agentName" id="agent" placeholder="Enter your name" /></td>
+                </tr>
+            </table>
+            <br />
             <form method="post" name="Line1" id="Line1">
-                <h2>Daily Sales</h2>
-                <table>
-                    <tr>
-                        <td><label>Date:</label></td>
-                        <td>
-                            <select style="width: 70px;" ; id="day">
-                                <option value="" selected disabled hidden>Day</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                                <option value="13">13</option>
-                                <option value="14">14</option>
-                                <option value="15">15</option>
-                                <option value="16">16</option>
-                                <option value="17">17</option>
-                                <option value="18">18</option>
-                                <option value="19">19</option>
-                                <option value="20">20</option>
-                                <option value="21">21</option>
-                                <option value="22">22</option>
-                                <option value="23">23</option>
-                                <option value="24">24</option>
-                                <option value="25">25</option>
-                                <option value="26">26</option>
-                                <option value="27">27</option>
-                                <option value="28">28</option>
-                                <option value="29">29</option>
-                                <option value="30">30</option>
-                                <option value="31">31</option>
-                            </select>
-                            <select style="width: 70px;" ; id="month" onchange="DaysFix()">
-                                <option value="" selected disabled hidden>Month</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                            </select>
-                            <select id="year" onchange="DaysFix()">
-                                <option value="" selected disabled hidden>Year</option>
-                                <option value="2022">2022</option>
-                                <option value="2023">2023</option>
-                                <option value="2024">2024</option>
-                                <option value="2025">2025</option>
-                                <option value="2026">2026</option>
-                                <option value="2027">2027</option>
-                                <option value="2028">2028</option>
-                                <option value="2029">2029</option>
-                                <option value="2030">2030</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><label>Store:</label></td>
-                        <td>
-                            <select class="selStore" name="Store" id="store1">
-                                <option value="" selected disabled hidden>Store Name</option>
-                                <option value="شرق النيل">شرق النيل</option>
-                                <option value="نادى التجديف">نادى التجديف</option>
-                                <option value="بيت الرحمه">بيت الرحمه</option>
-                                <option value="الشهيد">الشهيد</option>
-                                <option value="اخميم">اخميم</option>
-                                <option value="المنشاه">المنشاه</option>
-                                <option value="جرجا - المصريه جروب">جرجا - المصريه جروب</option>
-                                <option value="جرجا - فيوتشر">جرجا - فيوتشر</option>
-                                <option value="البلينا - فيوتشر">البلينا - فيوتشر</option>
-                                <option value="البلينا - تليكوم">البلينا - تليكوم</option>
-                                <option value="دار السلام">دار السلام</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><label>Agent:</label></td>
-                        <td><input type="text" class="agentName" name="Agent" id="agent1" placeholder="Enter your name" /></td>
-                    </tr>
-                </table>
-                <br />
-                <label>1.</label>
                 <input type="text" name="Date" id="date1" style="display: none;" />
+                <input type="text" name="Store" id="store1" style="display: none;" />
+                <input type="text" name="Agent" id="agent1" style="display: none;" />
+                <label>1.</label>
                 <input type="tel" name="Line" id="line1" />
                 <select name="Tariff" id="tariff1">
                     <option value="" selected disabled hidden>Tariff</option>
@@ -142,7 +144,7 @@
                     <option value="ADSL 1 TB">ADSL 1 TB</option>
                     <option value="Fixed Line">Fixed Line</option>
                 </select>
-                <p id="loading1" class="loading"></p>
+                <label id="loading1" class="loading"></label>
                 <br />
                 <br />
             </form>
@@ -187,7 +189,7 @@
                     <option value="ADSL 1 TB">ADSL 1 TB</option>
                     <option value="Fixed Line">Fixed Line</option>
                 </select>
-                <p id="loading2" class="loading"></p>
+                <label id="loading2" class="loading"></label>
                 <br />
                 <br />
             </form>
@@ -232,7 +234,7 @@
                     <option value="ADSL 1 TB">ADSL 1 TB</option>
                     <option value="Fixed Line">Fixed Line</option>
                 </select>
-                <p id="loading3" class="loading"></p>
+                <label id="loading3" class="loading"></label>
                 <br />
                 <br />
             </form>
@@ -277,7 +279,7 @@
                     <option value="ADSL 1 TB">ADSL 1 TB</option>
                     <option value="Fixed Line">Fixed Line</option>
                 </select>
-                <p id="loading4" class="loading"></p>
+                <label id="loading4" class="loading"></label>
                 <br />
                 <br />
             </form>
@@ -322,7 +324,7 @@
                     <option value="ADSL 1 TB">ADSL 1 TB</option>
                     <option value="Fixed Line">Fixed Line</option>
                 </select>
-                <p id="loading5" class="loading"></p>
+                <label id="loading5" class="loading"></label>
                 <br />
                 <br />
             </form>
@@ -367,7 +369,7 @@
                     <option value="ADSL 1 TB">ADSL 1 TB</option>
                     <option value="Fixed Line">Fixed Line</option>
                 </select>
-                <p id="loading6" class="loading"></p>
+                <label id="loading6" class="loading"></label>
                 <br />
                 <br />
             </form>
@@ -412,7 +414,7 @@
                     <option value="ADSL 1 TB">ADSL 1 TB</option>
                     <option value="Fixed Line">Fixed Line</option>
                 </select>
-                <p id="loading7" class="loading"></p>
+                <label id="loading7" class="loading"></label>
                 <br />
                 <br />
             </form>
@@ -457,7 +459,7 @@
                     <option value="ADSL 1 TB">ADSL 1 TB</option>
                     <option value="Fixed Line">Fixed Line</option>
                 </select>
-                <p id="loading8" class="loading"></p>
+                <label id="loading8" class="loading"></label>
                 <br />
                 <br />
             </form>
@@ -502,7 +504,7 @@
                     <option value="ADSL 1 TB">ADSL 1 TB</option>
                     <option value="Fixed Line">Fixed Line</option>
                 </select>
-                <p id="loading9" class="loading"></p>
+                <label id="loading9" class="loading"></label>
                 <br />
                 <br />
                 <br />
@@ -566,11 +568,11 @@
                 }
             }
             function checkInput() {
-                if (document.getElementById("store1").value == "") {
-                    document.getElementById("store1").focus();
+                if (document.getElementById("store").value == "") {
+                    document.getElementById("store").focus();
                     return false;
-                } else if (document.getElementById("agent1").value == "") {
-                    document.getElementById("agent1").focus();
+                } else if (document.getElementById("agent").value == "") {
+                    document.getElementById("agent").focus();
                     return false;
                 } else if (
                     document.getElementById("line1").value == "" &&
@@ -656,7 +658,8 @@
                 document.getElementById("date7").value = date;
                 document.getElementById("date8").value = date;
                 document.getElementById("date9").value = date;
-                var store = document.getElementById("store1").value;
+                var store = document.getElementById("store").value;
+                document.getElementById("store1").value = store;
                 document.getElementById("store2").value = store;
                 document.getElementById("store3").value = store;
                 document.getElementById("store4").value = store;
@@ -665,7 +668,8 @@
                 document.getElementById("store7").value = store;
                 document.getElementById("store8").value = store;
                 document.getElementById("store9").value = store;
-                var agent = document.getElementById("agent1").value;
+                var agent = document.getElementById("agent").value;
+                document.getElementById("agent1").value = agent;
                 document.getElementById("agent2").value = agent;
                 document.getElementById("agent3").value = agent;
                 document.getElementById("agent4").value = agent;
@@ -730,7 +734,6 @@
                 }
             });
         </script>
-        <br />
         <footer>
             <p class="footer">Developed by: Mamdouh Khalaf .. "MUE Team"</p>
         </footer>
